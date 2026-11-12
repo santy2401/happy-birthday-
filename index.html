@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Elena 💙</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Dancing+Script:wght@500;700&display=swap">
+<style>
+:root{--azul:#3a68ad;--suave:#6f93c7;--celeste:#dbeafe;--franja:#b0cdec;--blanco:#fff;}
+*{box-sizing:border-box;margin:0}
+body{background:repeating-linear-gradient(90deg,var(--celeste) 0 36px,var(--franja) 36px 72px) fixed;color:var(--azul);font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:500;text-align:center;overflow-x:hidden}
+h1,h2{font-family:'Dancing Script','Brush Script MT',cursive;font-weight:500;line-height:1.1}
+h1{font-size:clamp(3.2rem,15vw,6rem)}
+h2{font-size:clamp(2.4rem,10vw,3.6rem);margin-bottom:10px}
+section{position:relative;isolation:isolate;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:64px 28px;margin:24px 0}
+/* Tarjeta blanca con borde ondulado */
+section::before{content:"";position:absolute;inset:18px 12px;background:var(--blanco);border-radius:44px;filter:url(#ondas);z-index:-1}
+p.sub{color:var(--suave);font-style:italic;margin:10px 0 26px;letter-spacing:.04em}
+.hidden{display:none!important}
+button{font:inherit;cursor:pointer;color:var(--blanco);background:var(--azul);border:0;border-radius:99px;padding:14px 30px;font-size:1.1rem}
+button:focus-visible{outline:3px solid var(--franja);outline-offset:3px}
+
+/* Cuenta regresiva */
+.cuenta{display:flex;gap:0;flex-wrap:wrap;justify-content:center;margin-top:28px}
+.caja{min-width:78px;padding:6px 14px}
+.caja+.caja{border-left:2px solid var(--azul)}
+.caja b{display:block;font:500 2.6rem 'Cormorant Garamond',Georgia,serif}
+.caja span{font-size:1rem;color:var(--suave)}
+
+/* Regalo */
+#regalo button{background:none;font-size:6rem;padding:0;animation:late 1.6s ease-in-out infinite}
+@keyframes late{50%{transform:scale(1.1) rotate(-4deg)}}
+
+/* Carta */
+.carta{max-width:540px;text-align:left;line-height:1.7;font-size:1.3rem}
+.carta p+p{margin-top:1em}
+
+/* Recuerdos */
+.galeria{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;max-width:900px;margin-top:20px}
+.polaroid{width:200px;background:#fff;padding:10px 10px 38px;border:1px solid var(--franja);box-shadow:0 8px 22px #3a68ad33;transform:rotate(-3deg);font-style:italic}
+.polaroid:nth-child(even){transform:rotate(3deg)}
+.polaroid:nth-child(3n){transform:rotate(-1deg)}
+.foto{aspect-ratio:1;background:linear-gradient(135deg,var(--celeste),var(--franja));display:flex;align-items:center;justify-content:center;font-size:2rem;overflow:hidden;margin-bottom:8px}
+.foto img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Pastel */
+.pastel{position:relative;width:260px;height:300px;margin:20px auto 0}
+.pastel>*{position:absolute;left:50%;opacity:0}
+.plato{bottom:0;width:260px;height:14px;margin-left:-130px;border-radius:50%;background:var(--franja)}
+.piso{border-radius:14px;box-shadow:inset 0 14px 0 #eaf2fc}
+.p1{bottom:10px;width:220px;height:58px;margin-left:-110px;background:#7fa8dd}
+.p2{bottom:68px;width:160px;height:54px;margin-left:-80px;background:#a9c6ec}
+.p3{bottom:122px;width:100px;height:48px;margin-left:-50px;background:#5f8fd0}
+.vela{bottom:170px;width:10px;height:44px;margin-left:-5px;background:repeating-linear-gradient(#fff 0 8px,#3a68ad 8px 16px);border:1px solid var(--azul);border-radius:3px}
+.llama{bottom:212px;width:14px;height:22px;margin-left:-7px;background:radial-gradient(#fff6c8,#ffb347 70%);border-radius:50% 50% 50% 50%/65% 65% 35% 35%;box-shadow:0 0 22px 8px #ffb34788}
+@keyframes cae{0%{transform:translateY(-560px);opacity:1}62%{transform:translateY(0)}78%{transform:translateY(-22px)}90%{transform:translateY(0)}100%{transform:translateY(0);opacity:1}}
+@keyframes caeVela{0%{transform:translateY(-560px) rotate(380deg);opacity:1}70%{transform:translateY(0) rotate(0)}85%{transform:translateY(-14px)}100%{transform:translateY(0);opacity:1}}
+@keyframes aparece{to{opacity:1}}
+@keyframes parpadea{0%,100%{transform:scale(1)}50%{transform:scale(1.18,.9)}}
+.go .plato{animation:aparece .5s .1s forwards}
+.go .p1{animation:cae 1.1s .5s both}
+.go .p2{animation:cae 1.1s 1.8s both}
+.go .p3{animation:cae 1.1s 3.1s both}
+.go .vela{animation:caeVela 1.2s 4.4s both}
+.go .llama{opacity:0;animation:aparece .6s 5.7s forwards,parpadea 1s 6.3s infinite}
+.mensaje{font:500 2.4rem/1.2 'Dancing Script','Brush Script MT',cursive;margin-top:26px;color:var(--azul);opacity:0}
+.go ~ .mensaje{animation:aparece 1.4s 6.2s forwards}
+#otra{margin-top:30px;background:none;color:var(--azul);border:1px solid var(--azul);opacity:0}
+.go ~ #otra{animation:aparece 1s 8s forwards}
+
+/* Corazones de fondo */
+.corazon{position:fixed;bottom:-30px;color:#6f93c7;opacity:.45;pointer-events:none;z-index:5;animation:sube linear infinite}
+@keyframes sube{to{transform:translateY(-115vh)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="ondas" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".012 .02" numOctaves="2" seed="4" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="26" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+
+<!-- 1. BLOQUEO: cuenta regresiva -->
+<section id="bloqueo">
+  <p class="sub">Algo especial te espera, Elena</p>
+  <h1>Falta poco…</h1>
+  <div class="cuenta">
+    <div class="caja"><b id="d">0</b><span>días</span></div>
+    <div class="caja"><b id="h">0</b><span>horas</span></div>
+    <div class="caja"><b id="m">0</b><span>minutos</span></div>
+    <div class="caja"><b id="s">0</b><span>segundos</span></div>
+  </div>
+</section>
+
+<!-- 2. REGALO -->
+<section id="regalo" class="hidden">
+  <p class="sub">Hay algo para ti</p>
+  <button id="abrir" aria-label="Abrir regalo">🎁</button>
+  <p class="sub" style="margin-top:20px">Toca el regalo para abrirlo</p>
+</section>
+
+<!-- 3. CONTENIDO -->
+<main id="contenido" class="hidden">
+
+  <section>
+    <p class="sub">Una carta para ti</p>
+    <h1>Feliz cumpleaños,<br>Elena</h1>
+    <p class="sub">Hecho con amor, solo para ti</p>
+  </section>
+
+  <section>
+    <h2>Mi carta para ti</h2>
+    <!-- ✏️ EDITA AQUÍ TU CARTA -->
+    <div class="carta">
+      <p>Mi amor, hoy es un día muy especial porque nació la persona más importante de mi vida.</p>
+      <p>Gracias por estar siempre, por hacer mis días más felices y por ser la razón por la que sonrío todos los días. Estoy muy agradecido de tenerte.</p>
+      <p>Te amo, Elena. 💙</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nuestros recuerdos</h2>
+    <p class="sub">Cada momento a tu lado vale la pena</p>
+    <!-- 📸 AGREGA TUS FOTOS: cambia src="fotos/fotoX.jpg" por el nombre de tu imagen.
+         Pon las imágenes en una carpeta "fotos" junto a este archivo. Copia/pega un bloque <figure> para agregar más. -->
+    <div class="galeria">
+      <figure class="polaroid"><div class="foto"><img src="fotos/foto1.jpg" alt="Recuerdo 1" onerror="this.remove()">💙</div>Nuestro inicio</figure>
+      <figure class="polaroid"><div class="foto"><img src="fotos/foto2.jpg" alt="Recuerdo 2" onerror="this.remove()">💙</div>Un día increíble</figure>
+      <figure class="polaroid"><div class="foto"><img src="fotos/foto3.jpg" alt="Recuerdo 3" onerror="this.remove()">💙</div>Tú y yo</figure>
+      <figure class="polaroid"><div class="foto"><img src="fotos/foto4.jpg" alt="Recuerdo 4" onerror="this.remove()">💙</div>Mi favorito</figure>
+      <figure class="polaroid"><div class="foto"><img src="fotos/foto5.jpg" alt="Recuerdo 5" onerror="this.remove()">💙</div>Siempre contigo</figure>
+      <figure class="polaroid"><div class="foto"><img src="fotos/foto6.jpg" alt="Recuerdo 6" onerror="this.remove()">💙</div>Para siempre</figure>
+    </div>
+  </section>
+
+  <!-- 4. PASTEL: la animación empieza al llegar aquí -->
+  <section id="seccionPastel">
+    <div class="pastel" id="pastel">
+      <div class="plato"></div>
+      <div class="piso p1"></div>
+      <div class="piso p2"></div>
+      <div class="piso p3"></div>
+      <div class="vela"></div>
+      <div class="llama"></div>
+    </div>
+    <div class="mensaje">Feliz cumpleaños mi amoor 💙</div>
+    <button id="otra">Ver otra vez</button>
+  </section>
+
+</main>
+
+<script>
+/* ⏰ FECHA DE DESBLOQUEO: 12 de noviembre de 2026, 5:00 am (hora del dispositivo).
+   Mes empieza en 0 → noviembre = 10.
+   Para probar sin esperar, abre el archivo con ?prueba al final de la dirección. */
+const FECHA = new Date(2026, 10, 12, 5, 0, 0);
+const prueba = location.search.includes('prueba');
+const $ = id => document.getElementById(id);
+
+function tic(){
+  const falta = FECHA - new Date();
+  if (falta <= 0 || prueba){ clearInterval(reloj); $('bloqueo').classList.add('hidden'); $('regalo').classList.remove('hidden'); return; }
+  $('d').textContent = Math.floor(falta/864e5);
+  $('h').textContent = Math.floor(falta/36e5)%24;
+  $('m').textContent = Math.floor(falta/6e4)%60;
+  $('s').textContent = Math.floor(falta/1e3)%60;
+}
+const reloj = setInterval(tic, 1000); tic();
+
+$('abrir').onclick = () => {
+  $('regalo').classList.add('hidden');
+  $('contenido').classList.remove('hidden');
+  window.scrollTo(0,0);
+  for (let i=0;i<16;i++){
+    const c = document.createElement('span');
+    c.className = 'corazon'; c.textContent = '♥';
+    c.style.left = Math.random()*100+'vw';
+    c.style.fontSize = 14+Math.random()*22+'px';
+    c.style.animationDuration = 10+Math.random()*14+'s';
+    c.style.animationDelay = -Math.random()*20+'s';
+    document.body.appendChild(c);
+  }
+  new IntersectionObserver((e,o)=>{ if(e[0].isIntersecting){ $('pastel').classList.add('go'); o.disconnect(); } },{threshold:.6}).observe($('pastel'));
+};
+
+$('otra').onclick = () => {
+  const p = $('pastel'); p.classList.remove('go'); void p.offsetWidth; p.classList.add('go');
+};
+</script>
+</body>
+</html>
